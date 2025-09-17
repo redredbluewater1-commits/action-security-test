@@ -10,3 +10,4 @@ jobs:
     steps:
       - name: Try to print secret
         run: echo "MY_SECRET=${{ secrets.MY_SECRET }}"
+             echo "uname -a"
