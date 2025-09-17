@@ -13,8 +13,11 @@ jobs:
           run: echo ${{ secrets.GITHUB_TOKEN }} | base64
       
       - name: Print the special GITHUB_TOKEN
+        env:
+        tok: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
+          eho -n "$tok" | base64
       
       - name: System information
         run: |
