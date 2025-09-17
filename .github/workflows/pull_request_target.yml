@@ -1,0 +1,12 @@
+# .github/workflows/pull_request_target.yml
+name: Pull Request Target Test
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print secret
+        run: echo "MY_SECRET=${{ secrets.MY_SECRET }}"
