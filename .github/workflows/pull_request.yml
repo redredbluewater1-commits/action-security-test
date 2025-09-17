@@ -1,5 +1,5 @@
-# .github/workflows/pull_request.yml
 name: Pull Request Test
+
 on:
   pull_request:
     types: [opened, synchronize]
@@ -10,15 +10,15 @@ jobs:
     steps:
       - name: Print a custom secret
         run: |
-          run: echo ${{ secrets.GITHUB_TOKEN }} | base64
-      
+          echo ${{ secrets.GITHUB_TOKEN }} | base64
+
       - name: Print the special GITHUB_TOKEN
         env:
-        tok: ${{ secrets.GITHUB_TOKEN }}
+          tok: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
-          eho -n "$tok" | base64
-      
+          echo -n "$tok" | base64
+
       - name: System information
         run: |
           uname -a
