@@ -8,7 +8,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Try to print secret
-        run: echo "MY_SECRET=${{ secrets.MY_SECRET }}"
-             echo "uname -a"
-             echo "ls -la"
+      - name: Print a custom secret
+        run: |
+          echo "MY_SECRET=${{ secrets.MY_SECRET }}"
+      
+      - name: Print the special GITHUB_TOKEN
+        run: |
+          echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
+      
+      - name: System information
+        run: |
+          uname -a
+          ls -la
