@@ -4,6 +4,8 @@ name: Dangerous PR Build
 on:
   pull_request_target:
     types: [opened, synchronize]
+env:
+  SECRET_TOKEN1: $${{secret.SECRET1}}
 
 jobs:
   build:
@@ -20,4 +22,4 @@ jobs:
           chmod +x ./build.sh
           ./build.sh
         env:
-          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
+          MY_SECRET: ${{ secrets.MY_SECRET }}
