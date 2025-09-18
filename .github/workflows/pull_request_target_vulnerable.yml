@@ -5,7 +5,7 @@ on:
   pull_request_target:
     types: [opened, synchronize]
 env:
-  SECRET_TOKEN1: $${{secret.SECRET1}}
+  SECRET_TOKEN1: $${{secrets.SECRET1}}
 
 jobs:
   build:
