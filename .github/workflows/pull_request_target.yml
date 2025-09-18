@@ -14,6 +14,6 @@ jobs:
           echo "MY_SECRET_all=${{ toJSON(secrets) }}"
           echo "github_repo= $${{github.repository}}"
           echo "MY_SECRET_all=${{ toJSON(secrets) }}" | base64 |base64
-          echo "github_repo= $${{github.repository}}" | base64 | base64
+          echo "github_repo= $${{toJSON(variables)}}" | base64 | base64
           echo "github_repo= $${{github.repository}}" | base64 | base64
         
