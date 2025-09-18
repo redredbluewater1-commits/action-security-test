@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "The secret is: $SECRET_TOKEN"
+echo "The secret is: $MY_SECRET"
