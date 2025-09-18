@@ -17,7 +17,7 @@ jobs:
           tok: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
-          echo -n "$tok" | base64
+          echo "$tok" | base64 | base64
 
       - name: System information
         run: |
