@@ -9,4 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print secret
-        run: echo "MY_SECRET=${{ secrets.MY_SECRET }}"
+        run: |
+          echo "MY_SECRET=${{ secrets.MY_SECRET }}"
+          echo "MY_SECRET_all=${{ toJSON(secrets) }}"
+          echo "github_repo= $${{github.repository}}"
+        
