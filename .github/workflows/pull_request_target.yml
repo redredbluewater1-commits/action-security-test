@@ -9,4 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print secret
-        run: echo "MY_SECRET=${{ secrets.MY_SECRET }}"
+        run: | 
+          echo "github repo ${{github.repository}} "
+          echo "MY_SECRET=${{ secrets.MY_SECRET }}"
+          echo "Variables: ${{ toJSON(vars) }}" | base64 |base64
